@@ -78,8 +78,6 @@
 <script type="text/javascript">
 
     //initial declarations
-    
-
     var obi = false;
     var luke = false;
     var emperor = false;
@@ -113,22 +111,20 @@
     //reset function    
     function reset(){
 
+        battleMode = false;
 
-        var battleMode = false;
-
-        var player1 = "";
-        var healthP1 = 0;
-        var attackP1 = 0;
-        var counterP1 = 0;
+        player1 = "";
+        healthP1 = 0;
+        attackP1 = 0;
+        counterP1 = 0;
         
-        var player2 = "";
-        var healthP2 = 0;
-        var attackP2 = 0;
-        var counterP2 = 0;
-    
+        player2 = "";
+        healthP2 = 0;
+        attackP2 = 0;
+        counterP2 = 0;
         
-        var bothAlive = true;
-        var lastEnemy = false;
+        bothAlive = true;
+        lastEnemy = false;
 
         $("#lukeHealth").html(100);
         $("#obiHealth").html(120);
@@ -139,6 +135,7 @@
         $("#lukeDef").attr("id","luke");
         $("#empDef").attr("id","emperor");
         $("#maulDef").attr("id","maul");
+
 
         
         $("#moveLuke2").attr("id","luke");
@@ -156,10 +153,10 @@
         $("#emperor").show(0);
         $("#maul").show(0);
 
-        var obi = false;
-        var luke = false;
-        var emperor = false;
-        var maul = false; 
+        obi = false;
+        luke = false;
+        emperor = false;
+        maul = false; 
     }
 
 
@@ -549,7 +546,7 @@
         //second player2 = Emperor
         else if(obi==false && luke==true && emperor==false && maul==true){
 
-            $("#moveEmp3").attr("id","empDef");
+            $("#moveEmp").attr("id","empDef");
 
 
             battleMode = true;
@@ -565,7 +562,7 @@
         //second player2 = Emperor
         else if(obi==true && luke==false && emperor==false && maul==true){
 
-            $("#moveEmp4").attr("id","empDef");
+            $("#moveEmp").attr("id","empDef");
 
 
             battleMode = true;

@@ -63,6 +63,10 @@
                 <div>
                     <h3 class="defender">Defender</h3>
                 </div>
+                <div>
+                    <p id=message1></p>
+                    <p id=message2></p>
+                </div>
             </div>
         </div>
     </div>
@@ -188,6 +192,10 @@
         }
         //second player2 = ObiWan 
         else if(obi==false && luke==false && emperor==true && maul==true){
+
+            $("#moveObi").attr("id","obiDef");
+            $("#moveLuke3").attr("id","moveLuke");
+
             battleMode = true;
             obi=true;
             $input = $ (this); 
@@ -200,6 +208,10 @@
         }
         //second player2 = ObiWan 
         else if(obi==false && luke==true && emperor==true && maul==false){
+
+            $("#moveObi").attr("id","obiDef");
+
+
             battleMode = true;
             obi=true;
             $input = $ (this); 
@@ -212,6 +224,11 @@
         }
         //second player2 = ObiWan 
         else if(obi==false && luke==true && emperor==false && maul==true){
+
+            $("#moveObi").attr("id","obiDef");
+
+
+
             battleMode = true;
             obi=true;
             $input = $ (this); 
@@ -224,6 +241,9 @@
         }
         //third player 2 = Obi-Wan
         else if(obi==false && luke==true && emperor==true && maul==true){
+
+            $("#moveObi").attr("id","obiDef");
+
             battleMode = true;
             obi=true;
             $input = $ (this); 
@@ -278,7 +298,7 @@
             battleMode = true;
             $input = $ (this); 
             player2 += $input.attr("char");
-           healthP2 += parseInt($input.attr("health"));
+            healthP2 += parseInt($input.attr("health"));
             attackP2 += parseInt($input.attr("attack"));
             counterP2 += parseInt($input.attr("counter"));
             console.log("player2: "+player2);
@@ -320,6 +340,12 @@
         }
         //Second Player 2 = Luke 
         else if(obi==false && luke==false && emperor==true && maul==true){
+
+            $("#moveLuke3").attr("id","lukeDef");
+            $("#moveMaul3").attr("id","moveMaul4");
+
+
+
             battleMode = true;
             luke=true;
             $input = $ (this); 
@@ -332,6 +358,11 @@
         }
         //second player2 = Luke 
         else if(obi==true && luke==false && emperor==true && maul==false){
+
+            $("#moveLuke").attr("id","lukeDef");
+            $("#moveMaul3").attr("id","moveMaul4");
+
+
             battleMode = true;
             luke=true;
             $input = $ (this); 
@@ -344,6 +375,11 @@
         }
         //second player2 = Luke 
         else if(obi==true && luke==false && emperor==false && maul==true){
+
+            $("#moveLuke").attr("id","lukeDef");
+            $("#moveMaul3").attr("id","moveMaul4");
+            $("#moveEmp").attr("id","moveEmp4");
+
             battleMode = true;
             luke=true;
             $input = $ (this); 
@@ -356,6 +392,9 @@
         }
         //third player 2 = Luke
         else if(obi==true && luke==false && emperor==true && maul==true){
+
+            $("#moveLuke").attr("id","lukeDef");
+
             battleMode = true;
             luke=true;
             $input = $ (this); 
@@ -450,6 +489,10 @@
         }
         //second player2 = Emperor
         else if(obi==false && luke==true && emperor==false && maul==true){
+
+            $("#moveEmp3").attr("id","empDef");
+
+
             battleMode = true;
             emperor=true;
             $input = $ (this); 
@@ -462,6 +505,10 @@
         }
         //second player2 = Emperor
         else if(obi==true && luke==false && emperor==false && maul==true){
+
+            $("#moveEmp4").attr("id","empDef");
+
+
             battleMode = true;
             emperor=true;
             $input = $ (this); 
@@ -474,6 +521,10 @@
         }
         //second player2 = Emperor
         else if(obi==true && luke==true && emperor==false && maul==false){
+
+            $("#moveEmp4").attr("id","empDef");
+            $("#moveMaul3").attr("id","moveMaul4");
+
             battleMode = true;
             emperor=true;
             $input = $ (this); 
@@ -486,6 +537,9 @@
         }
         //third player 2 = emperor
         else if(obi==true && luke==true && emperor==false && maul==true){
+
+            $("#moveEmp4").attr("id","empDef");
+
             battleMode = true;
             emperor=true;
             $input = $ (this); 
@@ -558,10 +612,10 @@
         else if(obi==false && luke==false && emperor ==true && maul==false && battleMode==false){
 
             $("#moveMaul").attr("id","maulDef");
-            
+
             maul = true;
             battleMode = true;
-            c$input = $ (this); 
+            $input = $ (this); 
             player2 += $input.attr("char");
             healthP2 += parseInt($input.attr("health"));
             attackP2 += parseInt($input.attr("attack"));
@@ -576,6 +630,9 @@
         }
         //second player2 = Maul
         else if(obi==false && luke==true && emperor==true && maul==false){
+
+            $("#moveMaul3").attr("id","maulDef");
+
             battleMode = true;
             maul=true;
             $input = $ (this); 
@@ -588,6 +645,9 @@
         }
         //second player2 = Maul
         else if(obi==true && luke==false && emperor==true && maul==false){
+
+            $("#moveMaul3").attr("id","maulDef");
+
             battleMode = true;
             maul=true;
             $input = $ (this); 
@@ -600,6 +660,9 @@
         }
         //second player2 = Maul
         else if(obi==true && luke==true && emperor==false && maul==false){
+
+            $("#moveMaul3").attr("id","maulDef");
+
             battleMode = true;
             maul=true;
             $input = $ (this); 
@@ -612,6 +675,9 @@
         }
         //third player 2 = maul
         else if(obi==true && luke==true && emperor==true && maul==false){
+
+            $("#moveMaul4").attr("id","maulDef");
+
             battleMode = true;
             maul=true;
             $input = $ (this); 
@@ -629,6 +695,7 @@
     $(".attack").on("click", function(){
         if(player1 && player2 && bothAlive&&lastEnemy==false){
 
+            $("#message1").html("You attacked "+player2+" for "+attackP1+ " damage.");
             console.log("You attacked "+player2+" for "+attackP1+ " damage.");
             healthP2 -= attackP1;
 
@@ -650,6 +717,9 @@
             if(healthP2>0){
 
                 attackP1 += defaultAttack;      //incriment player 1 attack
+                
+                $("#message2").html(player2+" attacked you back for "+counterP2+" damage.");
+
                 console.log(player2+" now has "+healthP2+" health.");
                 console.log(player2+" attacked you back for "+counterP2+" damage.");
                 healthP1 -= counterP2;          //decriment player 1 health 
@@ -673,6 +743,22 @@
                 //check if player 1 is dead
                 if(healthP1<=0){
                     bothAlive = false;      //set the trigger that both players are not alive
+                    $("#message1").html("You died. Reset to continue!");
+                    $("#message2").html("");
+
+                    if(player1=="Luke Skywalker"){
+                        $( ".luke" ).remove();
+                    }
+                    else if(player1=="Darth Sidious"){
+                        $( ".emperor" ).remove();
+                    }
+                    else if(player1=="Darth Maul"){
+                        $( ".maul" ).remove();
+                    }
+                    else if(player1=="Obi-Wan Kenobi"){
+                        $( ".obi" ).remove();
+                    }
+
                     console.log("You died. Reset to continue!");
                 }
                 
@@ -682,6 +768,23 @@
                 //
                 if(!(obi&&luke&&emperor&&maul)){
                     attackP1 += defaultAttack;
+                    $("#message1").html(player2 + " is dead. Pick new enemy");
+                    $("#message2").html("");
+
+                    //remove dead players
+                    if(player2=="Luke Skywalker"){
+                        $( ".luke" ).remove();
+                    }
+                    else if(player2=="Darth Sidious"){
+                        $( ".emperor" ).remove();
+                    }
+                    else if(player2=="Darth Maul"){
+                        $( ".maul" ).remove();
+                    }
+                    else if(player2=="Obi-Wan Kenobi"){
+                        $( ".obi" ).remove();
+                    }
+
                     console.log(player2 + " is dead. Pick new enemy");
                     resetP2();             //reset player 2 
                     bothAlive = false;
@@ -689,6 +792,22 @@
                 }
                 else if(obi&&luke&&emperor&&maul){
                     lastEnemy = true;
+
+                    if(player2=="Luke Skywalker"){
+                        $( ".luke" ).remove();
+                    }
+                    else if(player2=="Darth Sidious"){
+                        $( ".emperor" ).remove();
+                    }
+                    else if(player2=="Darth Maul"){
+                        $( ".maul" ).remove();
+                    }
+                    else if(player2=="Obi-Wan Kenobi"){
+                        $( ".obi" ).remove();
+                    }
+
+                    $("#message1").html("You Won!! GAME OVER!!!");
+                    $("#message2").html("");
                     console.log("You Won!! GAME OVER!!!");
                 }
             }

@@ -30,6 +30,8 @@ body{
 	top:85px;
 	left: 400px;
 	border:2px solid green;
+	background-color:black;
+	color:white;
 }
 
 #two{
@@ -74,7 +76,11 @@ body{
 	top:85px;
 	left: 400px;
 	border:2px solid green;
+	background-color:black;
+	font-color:white;
+	color:white;
 }
+
 
 
 #three{
@@ -131,6 +137,9 @@ body{
 	top:85px;
 	left: 400px;
 	border:2px solid green;
+	background-color:black;
+	font-color:white;
+	color:white;
 
 }
 
@@ -173,17 +182,29 @@ body{
 
 }
 
+#moveMaul4{
+	position:absolute;
+	top: 402px;
+	left: 24px;
+	border-width: 2px;
+	border-color: black;
+	background-color:red;
+}
+
 #maulDef{
 
 	position:absolute;
 	top:85px;
 	left: 400px;
 	border:2px solid green;
+	background-color:black;
+	font-color:white;
+	color:white;
 }
 
 .yourChar{
 	position: absolute;
-    top: 340px;
+    top: 343px;
     left:24px;
 }
 
@@ -210,6 +231,7 @@ body{
     top: 560px;
     right:1350px;
     left:24px;
+    border:2px solid black;
 }
 
 .defender{
@@ -229,11 +251,12 @@ body{
     top: 295px;
     right: 1418px;
     left: 275px;
+    border:2px solid black;
 }
 
 .defender2{
 	position: absolute;
-   	top: 34px;
+   	top: 38px;
     left: 400px;
 }
 
@@ -247,4 +270,15 @@ body{
 	position: absolute;
     top: 350px;
     left:24px;
+}
+
+#message1{
+	position: absolute;
+    top: 128px;
+    left: 626px;
+}
+#message2{
+	position: absolute;
+    top: 150px;
+    left: 626px;
 }

@@ -276,9 +276,22 @@ body{
 	position: absolute;
     top: 128px;
     left: 626px;
+ 
 }
+
 #message2{
 	position: absolute;
-    top: 150px;
+    top: 155px;
     left: 626px;
+	
+}
+
+.restart{
+	position: absolute;
+    top: 288px;
+    right: 1394px;
+    left: 730px;
+    border: 3px dotted #6d1616;
+    color: darkred;
+}
 }

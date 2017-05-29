@@ -63,10 +63,13 @@
                 <div>
                     <h3 class="defender">Defender</h3>
                 </div>
-                <div>
+                <div class="messages">
                     <p id=message1></p>
                     <p id=message2></p>
                 </div>
+                <div>
+                    <button class="restart"><h1>Restart</h1></button>
+                <div>
             </div>
         </div>
     </div>
@@ -75,6 +78,7 @@
 <script type="text/javascript">
 
     //initial declarations
+    
 
     var obi = false;
     var luke = false;
@@ -106,7 +110,54 @@
         attackP2 = 0;
         counterP2 = 0;
     }
+
+    //reset function
+    function reset(){
+        var obi = false;
+        var luke = false;
+        var emperor = false;
+        var maul = false; 
+
+        var battleMode = false;
+
+        var player1 = "";
+        var healthP1 = 0;
+        var attackP1 = 0;
+        var counterP1 = 0;
+        
+        var player2 = "";
+        var healthP2 = 0;
+        var attackP2 = 0;
+        var counterP2 = 0;
     
+        
+        var bothAlive = true;
+        var lastEnemy = false;
+
+        
+
+        $("#obiDef").attr("id","obiWan");
+        $("#lukeDef").attr("id","luke");
+        $("#empDef").attr("id","emperor");
+        $("#maulDef").attr("id","maul");
+
+        
+        $("#moveLuke2").attr("id","luke");
+        $("#moveEmp2").attr("id","emperor");
+        $("#moveMaul2").attr("id","maul");
+
+        $('.fightSection2').removeClass('fightSection2').addClass('fightSection');
+        $('.attack2').removeClass('attack2').addClass('attack');
+        $('.defender2').removeClass('defender2').addClass('defender');
+        $('.yourChar2').removeClass('yourChar2').addClass('yourChar');
+        $('.enemies2').removeClass('enemies2').addClass('enemies');
+
+        $("#obiWan").show(0);
+        $("#luke").show(0);
+        $("#emperor").show(0);
+        $("#maul").show(0);
+    }
+
     // Obi-Wan
     $(".obi").on("click", function(){
 
@@ -194,7 +245,7 @@
         else if(obi==false && luke==false && emperor==true && maul==true){
 
             $("#moveObi").attr("id","obiDef");
-            $("#moveLuke3").attr("id","moveLuke");
+            
 
             battleMode = true;
             obi=true;
@@ -210,6 +261,9 @@
         else if(obi==false && luke==true && emperor==true && maul==false){
 
             $("#moveObi").attr("id","obiDef");
+            $("#moveLuke3").attr("id","moveLuke");
+            $("#moveMaul3").attr("id","moveMaul4");
+
 
 
             battleMode = true;
@@ -743,20 +797,25 @@
                 //check if player 1 is dead
                 if(healthP1<=0){
                     bothAlive = false;      //set the trigger that both players are not alive
+                    
                     $("#message1").html("You died. Reset to continue!");
                     $("#message2").html("");
 
                     if(player1=="Luke Skywalker"){
-                        $( ".luke" ).remove();
+                   
+                        $(".luke").hide(0);
                     }
                     else if(player1=="Darth Sidious"){
-                        $( ".emperor" ).remove();
+           
+                        $(".emperor").hide(0);
                     }
                     else if(player1=="Darth Maul"){
-                        $( ".maul" ).remove();
+        
+                        $(".maul").hide(0);
                     }
                     else if(player1=="Obi-Wan Kenobi"){
-                        $( ".obi" ).remove();
+                  
+                        $(".obi").hide(0);
                     }
 
                     console.log("You died. Reset to continue!");
@@ -773,16 +832,20 @@
 
                     //remove dead players
                     if(player2=="Luke Skywalker"){
-                        $( ".luke" ).remove();
+                        //$( ".luke" ).remove();
+                        $(".luke").hide(0);
                     }
                     else if(player2=="Darth Sidious"){
-                        $( ".emperor" ).remove();
+                        //$( ".emperor" ).remove();
+                        $(".emperor").hide(0);
                     }
                     else if(player2=="Darth Maul"){
-                        $( ".maul" ).remove();
+                        //$( ".maul" ).remove();
+                        $(".maul").hide(0);
                     }
                     else if(player2=="Obi-Wan Kenobi"){
-                        $( ".obi" ).remove();
+                        //$( ".obi" ).remove();
+                        $(".maul").hide(0);
                     }
 
                     console.log(player2 + " is dead. Pick new enemy");
@@ -794,20 +857,25 @@
                     lastEnemy = true;
 
                     if(player2=="Luke Skywalker"){
-                        $( ".luke" ).remove();
+                        //$( ".luke" ).remove();
+                        $(".luke").hide(0);
                     }
                     else if(player2=="Darth Sidious"){
-                        $( ".emperor" ).remove();
+                        //$( ".emperor" ).remove();
+                        $(".emperor").hide(0);
                     }
                     else if(player2=="Darth Maul"){
-                        $( ".maul" ).remove();
+                        //$( ".maul" ).remove();
+                        $(".maul").hide(0);
                     }
                     else if(player2=="Obi-Wan Kenobi"){
-                        $( ".obi" ).remove();
+                        //$( ".obi" ).remove();
+                        $(".obi").hide(0);
                     }
 
                     $("#message1").html("You Won!! GAME OVER!!!");
                     $("#message2").html("");
+                    $(".restart").hide("scale", 500);
                     console.log("You Won!! GAME OVER!!!");
                 }
             }
@@ -818,8 +886,14 @@
 
         }
         
-    });
 
+
+        
+    });
+    //onclick - reset button 
+    $(".restart").on("click", function(){
+            reset();
+    });
 
 </script>
 

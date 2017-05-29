@@ -3,10 +3,11 @@ body{
 	background-image: url("../images/background.jpg");
 }
 
-#one{
-	float: left;
-	margin:5px;
-}
+/*--------------------*/
+/*					  */
+/*	 Obi's Movements  */
+/*					  */
+/*--------------------*/
 
 #obiWan{
 	position:absolute;
@@ -34,10 +35,12 @@ body{
 	color:white;
 }
 
-#two{
-	float: left;
-	margin:5px;
-}
+
+/*--------------------*/
+/*					  */
+/*	Luke's Movements  */
+/*					  */
+/*--------------------*/
 
 #luke{
 	position:absolute;
@@ -81,12 +84,11 @@ body{
 	color:white;
 }
 
-
-
-#three{
-	float: left;
-	margin:5px;
-}
+/*--------------------*/
+/*					  */
+/*Emperor's Movements */
+/*					  */
+/*--------------------*/
 
 #emperor{
 	position:absolute;
@@ -143,10 +145,11 @@ body{
 
 }
 
-#four{
-	float: left;
-	margin:5px;
-}
+/*--------------------*/
+/*					  */
+/*	Maul's Movements  */
+/*					  */
+/*--------------------*/
 
 #maul{
 	position:absolute;
@@ -201,6 +204,13 @@ body{
 	font-color:white;
 	color:white;
 }
+
+
+/*--------------------*/
+/*					  */
+/*	Rearange Classes  */
+/*					  */
+/*--------------------*/
 
 .yourChar{
 	position: absolute;

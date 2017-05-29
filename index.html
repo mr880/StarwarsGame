@@ -12,8 +12,8 @@
 <body>
 
 <!-- Jumbotron for Title -->
-<div class="jumbotron">
-    <h1 class="text-center">Starwars RPG</h1>
+<div class="title">
+    <h1>Starwars RPG</h1>
 </div>
 
 <div class="container">
@@ -22,40 +22,46 @@
 
         <!-- Characters -->
         <div>
-            <div>
+            <div class="container">
                
-                <div>
-                    <button id="obiWan" class="btn btn-primary obi" char="Obi-Wan Kenobi" health="120" attack="8" counter="10"><h1>Obi-Wan Kenobi</h1><img src="assets/images/obi.png" alt="Obi-Wan" style="width:304px;height:228px;"> <h1 id="obiHealth">120</h1></button>
-
-                    <button id="luke" class="btn btn-primary luke" char="Luke Skywalker" health="100" attack="10" counter="5"><h1>Luke Skywalker</h1><img src="assets/images/luke.jpg" alt="Luke" style="width:304px;height:228px;"><h1 id="lukeHealth">100</h1></button>
-
-                    <button id="emperor" class="btn btn-primary emperor" char="Darth Sidious" health="150" attack="9" counter="20"><h1>Darth Sidious</h1><img src="assets/images/emperor.jpg" alt="Emperor" style="width:304px;height:228px;"><h1 id="emperorHealth">150</h1></button>
-
-                    <button id="maul" class="btn btn-primary maul" char="Darth Maul" health="180" attack="6" counter="25"><h1>Darth Maul</h1><img src="assets/images/maul.jpg" alt="Darth Maul" style="width:304px;height:228px;"><h1 id="maulHealth">180</h1></button>
+                <div class="one">
+                    <button id="obiWan" class="btn btn-primary obi" char="Obi-Wan Kenobi" health="120" attack="8" counter="10"><h1>Obi-Wan Kenobi</h1><img src="assets/images/obi.png" alt="Obi-Wan" style="width:200px;height:150px;"> <h1 id="obiHealth">120</h1></button>
                 </div>
-                <div class="panel-heading">
-                    <h3 class="panel-title">Your Character</h3>
+
+                <div class="two">
+                    <button id="luke" class="btn btn-primary luke" char="Luke Skywalker" health="100" attack="10" counter="5"><h1>Luke Skywalker</h1><img src="assets/images/luke.jpg" alt="Luke" style="width:200px;height:150px;"><h1 id="lukeHealth">100</h1></button>
                 </div>
+
+                <div class="three">
+                    <button id="emperor" class="btn btn-primary emperor" char="Darth Sidious" health="150" attack="9" counter="20"><h1>Darth Sidious</h1><img src="assets/images/emperor.jpg" alt="Emperor" style="width:200px;height:150px;"><h1 id="emperorHealth">150</h1></button>
+                </div>
+
+                <div class="four">
+                    <button id="maul" class="btn btn-primary maul" char="Darth Maul" health="180" attack="6" counter="25"><h1>Darth Maul</h1><img src="assets/images/maul.jpg" alt="Darth Maul" style="width:200px;height:150px;"><h1 id="maulHealth">180</h1></button>
+                </div> 
 
             </div>
         </div>
 
+        <div>
+            <h3 class="yourChar">Your Character</h3>
+        </div>
         <!-- Enemies -->
         <div>
             <div>
                 <div>
-                    <h3>Enemies Available To Attack</h3>
+                    <h3 class="enemies">Enemies Available To Attack</h3>
                 </div>
                
 
 
                 <div>
-                    <h3>Fight Section</h3>
+                    <h3 class="fightSection">Fight Section</h3>
                 </div>
                 <div>
-                    <button id="attack" class="btn btn-primary attack"><h1>Attack</h1></button>
+                    <button id="attack" class="attack"><h1>Attack</h1></button>
                 <div>
-                    <h3>Defender</h3>
+                    <h3 class="defender">Defender</h3>
                 </div>
             </div>
         </div>
@@ -103,6 +109,16 @@
         //Player 1 = Obi-Wan Kenobi                          
         if(obi==false && luke==false && emperor==false && maul==false){
             
+            $("#luke").attr("id","moveLuke");
+            $("#emperor").attr("id","moveEmp");
+            $("#maul").attr("id","moveMaul");
+            $('.fightSection').removeClass('fightSection').addClass('fightSection2');
+            $('.attack').removeClass('attack').addClass('attack2');
+            $('.defender').removeClass('defender').addClass('defender2');
+            $('.yourChar').removeClass('yourChar').addClass('yourChar2');
+            $('.enemies').removeClass('enemies').addClass('enemies2');
+
+            
             obi = true;
             battleMode=false;
 
@@ -117,6 +133,12 @@
         
         //player1 = Luke  --- Player 2 = Obi-Wan
         else if(obi==false && luke==true && emperor ==false && maul==false && battleMode==false){
+             
+            $("#moveObi").attr("id","obiDef");
+            $("#moveEmp").attr("id","moveEmp4");
+            $("#moveMaul").attr("id","moveMaul3");
+
+
             battleMode = true;
             obi =true;
             $input = $ (this); 
@@ -129,6 +151,11 @@
         }
         // Player 1 = Emperor  --- Player 2 = Obi-Wan
         else if(obi==false && luke==false && emperor ==true && maul==false && battleMode==false){
+
+            $("#moveObi").attr("id","obiDef");
+            $("#moveLuke3").attr("id","moveLuke");
+            $("#moveMaul").attr("id","moveMaul3");
+
             battleMode = true;
             obi =true;
             $input = $ (this); 
@@ -140,6 +167,11 @@
         }
         // Player 1 = Darth Maul  --- Player 2 = Obi-Wan
         else if(obi==false && luke==false && emperor ==false && maul==true && battleMode==false){
+
+            $("#moveObi").attr("id","obiDef");
+            $("#moveLuke3").attr("id","moveLuke");
+            $("#moveEmp3").attr("id","moveEmp");
+
             battleMode = true;
             obi =true;
             $input = $ (this); 
@@ -210,6 +242,16 @@
     $(".luke").on("click", function(){  
         // Player 1 = Luke                       
         if(obi==false && luke==false && emperor==false && maul==false){
+
+            $("#luke").attr("id","moveLuke2");
+            $("#obiWan").attr("id","moveObi");
+            $("#emperor").attr("id","moveEmp");
+            $("#maul").attr("id","moveMaul");
+            $('.fightSection').removeClass('fightSection').addClass('fightSection2');
+            $('.attack').removeClass('attack').addClass('attack2');
+            $('.defender').removeClass('defender').addClass('defender2');
+            $('.yourChar').removeClass('yourChar').addClass('yourChar2');
+            $('.enemies').removeClass('enemies').addClass('enemies2');
          
             luke = true;
             battleMode=false;
@@ -225,6 +267,13 @@
         }
         //Player1 = Obi-Wan --- Player 2 = Luke
         else if(obi==true && luke==false && emperor ==false && maul==false && battleMode==false){
+             
+            
+            $("#moveLuke").attr("id","lukeDef");
+            $("#moveEmp").attr("id","moveEmp4");
+            $("#moveMaul").attr("id","moveMaul3");
+            
+
             luke = true;
             battleMode = true;
             $input = $ (this); 
@@ -237,6 +286,10 @@
         }
         // Player 1 = Emperor --- Player 2 = Luke
         else if(obi==false && luke==false && emperor ==true && maul==false && battleMode==false){
+
+            $("#moveLuke3").attr("id","lukeDef");
+            $("#moveMaul").attr("id","moveMaul3");
+
             luke = true;
             battleMode = true;
             $input = $ (this); 
@@ -248,6 +301,11 @@
         }
         // Player 1 = Darth Maul --- Player 2 = Luke
         else if(obi==false && luke==false && emperor ==false && maul==true && battleMode==false){
+
+            $("#moveLuke3").attr("id","lukeDef");
+            $("#moveEmp3").attr("id","moveEmp");
+           
+
             battleMode = true;
             $input = $ (this); 
             player2 += $input.attr("char");
@@ -317,6 +375,16 @@
         //Player 1 = Emperor                      
        if(obi==false && luke==false && emperor==false && maul==false ){
             
+            $("#emperor").attr("id","moveEmp2");
+            $("#obiWan").attr("id","moveObi");
+            $("#luke").attr("id","moveLuke3");
+            $("#maul").attr("id","moveMaul");
+            $('.fightSection').removeClass('fightSection').addClass('fightSection2');
+            $('.attack').removeClass('attack').addClass('attack2');
+            $('.defender').removeClass('defender').addClass('defender2');
+            $('.yourChar').removeClass('yourChar').addClass('yourChar2');
+            $('.enemies').removeClass('enemies').addClass('enemies2');
+
             emperor = true;
             battleMode=false;
 
@@ -330,6 +398,11 @@
         }
         //Player 1 = Luke --- Player 2 = Emperor
         else if(obi==false && luke==true && emperor ==false && maul==false && battleMode==false){
+
+            
+            $("#moveEmp").attr("id","empDef");
+            $("#moveMaul").attr("id","moveMaul3");
+
             emperor = true;
             battleMode = true;
             $input = $ (this); 
@@ -341,6 +414,10 @@
         }
         //Player1 = Obi-Wan --- Player 2 = Emperor 
         else if(obi==true && luke==false && emperor ==false && maul==false && battleMode==false){
+
+            $("#moveEmp").attr("id","empDef");
+            $("#moveMaul").attr("id","moveMaul3");
+
             emperor = true;
             battleMode = true;
             $input = $ (this); 
@@ -352,6 +429,10 @@
         }
         // Player 1 = Darth Maul --- Player 2 = Emperor
         else if(obi==false && luke==false && emperor ==false && maul==true && battleMode==false){
+
+            $("#moveEmp3").attr("id","empDef");
+            
+
             emperor = true;
             battleMode = true;
             $input = $ (this); 
@@ -422,6 +503,16 @@
     $(".maul").on("click", function(){ 
     // Player 1 = Darth Maul                          
         if(obi==false && luke==false && emperor==false && maul==false){
+
+            $("#maul").attr("id","moveMaul2");
+            $("#obiWan").attr("id","moveObi");
+            $("#luke").attr("id","moveLuke3");
+            $("#emperor").attr("id","moveEmp3");
+            $('.fightSection').removeClass('fightSection').addClass('fightSection2');
+            $('.attack').removeClass('attack').addClass('attack2');
+            $('.defender').removeClass('defender').addClass('defender2');
+            $('.yourChar').removeClass('yourChar').addClass('yourChar2');
+            $('.enemies').removeClass('enemies').addClass('enemies2');
            
             maul = true;
             battleMode=false;
@@ -437,6 +528,9 @@
         }
         // Player 1 = Luke --- Player 2 = Darth Maul     
         else if(obi==false && luke==true && emperor ==false && maul==false && battleMode==false){
+
+            $("#moveMaul").attr("id","maulDef");
+
             maul = true;
             battleMode = true;
             $input = $ (this); 
@@ -448,6 +542,9 @@
         }
         //Player1 = Obi-Wan --- Player 2 = Darth Maul 
         else if(obi==true && luke==false && emperor ==false && maul==false && battleMode==false){
+
+            $("#moveMaul").attr("id","maulDef");
+
             maul = true;
             battleMode = true;
             $input = $ (this); 
@@ -459,6 +556,9 @@
         }
         // Player 1 = Emperor --- Player 2 = Darth Maul
         else if(obi==false && luke==false && emperor ==true && maul==false && battleMode==false){
+
+            $("#moveMaul").attr("id","maulDef");
+            
             maul = true;
             battleMode = true;
             c$input = $ (this); 

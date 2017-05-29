@@ -2,3 +2,249 @@ body{
 	font-family: arial;
 	background-image: url("../images/background.jpg");
 }
+
+#one{
+	float: left;
+	margin:5px;
+}
+
+#obiWan{
+	position:absolute;
+	top:85px;
+	left:24px;
+	
+	border:2px solid green;
+}
+
+#moveObi{
+	position:absolute;
+	top: 402px;
+	left: 24px;
+	border-width: 2px;
+	border-color: black;
+	background-color:red;
+}
+
+#obiDef{
+	position:absolute;
+	top:85px;
+	left: 400px;
+	border:2px solid green;
+}
+
+#two{
+	float: left;
+	margin:5px;
+}
+
+#luke{
+	position:absolute;
+	top:85px;
+	left:252px;
+	border:2px solid green;
+}
+
+#moveLuke{
+	position:absolute;
+	top: 402px;
+	left: 24px;
+	border-width: 2px;
+	border-color: black;
+	background-color:red;
+}
+
+#moveLuke2{
+	position:absolute;
+	top:85px;
+	left:24px;
+	border:2px solid green;
+}
+
+#moveLuke3{
+	position:absolute;
+	top: 402px;
+	left: 252px;
+	border-width: 2px;
+	border-color: black;
+	background-color:red;
+}
+
+#lukeDef{
+	position:absolute;
+	top:85px;
+	left: 400px;
+	border:2px solid green;
+}
+
+
+#three{
+	float: left;
+	margin:5px;
+}
+
+#emperor{
+	position:absolute;
+	top:85px;
+	left:479px;
+	border:2px solid green;
+}
+
+#moveEmp{
+	position:absolute;
+	top: 402px;
+	left: 252px;
+	border-width: 2px;
+	border-color: black;
+	background-color:red;
+}
+
+#moveEmp2{
+	position:absolute;
+	top:85px;
+	left:24px;
+	
+	border:2px solid green;
+
+}
+
+#moveEmp3{
+	position:absolute;
+	top: 402px;
+	left: 479px;
+	border-width: 2px;
+	border-color: black;
+	background-color:red;
+}
+
+#moveEmp4{
+	position: absolute;
+	top: 402px;
+	left: 24px;
+	border-width: 2px;
+	border-color: black;
+	background-color:red;
+}
+
+#empDef{
+
+	position:absolute;
+	top:85px;
+	left: 400px;
+	border:2px solid green;
+
+}
+
+#four{
+	float: left;
+	margin:5px;
+}
+
+#maul{
+	position:absolute;
+	top:85px;
+	left:706px;
+	border:2px solid green;
+}
+
+#moveMaul{
+	position:absolute;
+	top: 402px;
+	left: 479px;
+	border-width: 2px;
+	border-color: black;
+	background-color:red;
+}
+
+#moveMaul2{
+	position:absolute;
+	top:85px;
+	left:24px;
+	
+	border:2px solid green;
+}
+
+#moveMaul3{
+	position:absolute;
+	top: 402px;
+	left: 252px;
+	border-width: 2px;
+	border-color: black;
+	background-color:red;
+
+}
+
+#maulDef{
+
+	position:absolute;
+	top:85px;
+	left: 400px;
+	border:2px solid green;
+}
+
+.yourChar{
+	position: absolute;
+    top: 340px;
+    left:24px;
+}
+
+.yourChar2{
+	position: absolute;
+    top: 38px;
+    left:24px;
+}
+
+.enemies{
+	position: absolute;
+    top: 475px;
+    left:24px;
+}
+
+.fightSection{
+	position: absolute;
+    top: 500px;
+    left:24px;
+}
+
+.attack{
+	position: absolute;
+    top: 560px;
+    right:1350px;
+    left:24px;
+}
+
+.defender{
+	position: absolute;
+    top: 620px;
+    left:24px;
+}
+
+.fightSection2{
+	position: absolute;
+    top: 663px;
+    left: 24px;
+}
+
+.attack2{
+	position: absolute;
+    top: 295px;
+    right: 1418px;
+    left: 275px;
+}
+
+.defender2{
+	position: absolute;
+   	top: 34px;
+    left: 400px;
+}
+
+.title{
+	position: absolute;
+    right: 10%;
+    font-size: larger;
+}
+
+.enemies2{
+	position: absolute;
+    top: 350px;
+    left:24px;
+}

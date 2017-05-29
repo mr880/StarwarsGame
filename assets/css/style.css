@@ -288,10 +288,10 @@ body{
 
 .restart{
 	position: absolute;
-    top: 288px;
+    top: 378px;
     right: 1394px;
     left: 730px;
-    border: 3px dotted #6d1616;
+    border: 3px solid #6d1616;
     color: darkred;
 }
-}
+

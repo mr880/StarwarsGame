@@ -74,7 +74,7 @@
         </div>
     </div>
 </div>
-
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
 
     //initial declarations
@@ -102,7 +102,6 @@
     var bothAlive = true;
 
     var lastEnemy = false;
-    /*Initial Button Presses*/
 
     function resetP2(){
         player2 = "";
@@ -111,12 +110,9 @@
         counterP2 = 0;
     }
 
-    //reset function
+    //reset function    
     function reset(){
-        var obi = false;
-        var luke = false;
-        var emperor = false;
-        var maul = false; 
+
 
         var battleMode = false;
 
@@ -134,7 +130,10 @@
         var bothAlive = true;
         var lastEnemy = false;
 
-        
+        $("#lukeHealth").html(100);
+        $("#obiHealth").html(120);
+        $("#emperorHealth").html(150);
+        $("#maulHealth").html(180);
 
         $("#obiDef").attr("id","obiWan");
         $("#lukeDef").attr("id","luke");
@@ -156,9 +155,15 @@
         $("#luke").show(0);
         $("#emperor").show(0);
         $("#maul").show(0);
+
+        var obi = false;
+        var luke = false;
+        var emperor = false;
+        var maul = false; 
     }
 
-    // Obi-Wan
+
+    // Obi-Wan Click
     $(".obi").on("click", function(){
 
         //Player 1 = Obi-Wan Kenobi                          
@@ -643,7 +648,7 @@
             battleMode = true;
             $input = $ (this); 
             player2 += $input.attr("char");
-           healthP2 += parseInt($input.attr("health"));
+            healthP2 += parseInt($input.attr("health"));
             attackP2 += parseInt($input.attr("attack"));
             counterP2 += parseInt($input.attr("counter"));
             console.log("player2: "+player2);
@@ -819,6 +824,7 @@
                     }
 
                     console.log("You died. Reset to continue!");
+                    
                 }
                 
             }
@@ -830,22 +836,22 @@
                     $("#message1").html(player2 + " is dead. Pick new enemy");
                     $("#message2").html("");
 
-                    //remove dead players
+                    //hide dead players
                     if(player2=="Luke Skywalker"){
-                        //$( ".luke" ).remove();
+                        
                         $(".luke").hide(0);
                     }
                     else if(player2=="Darth Sidious"){
-                        //$( ".emperor" ).remove();
+                     
                         $(".emperor").hide(0);
                     }
                     else if(player2=="Darth Maul"){
-                        //$( ".maul" ).remove();
+                      
                         $(".maul").hide(0);
                     }
                     else if(player2=="Obi-Wan Kenobi"){
-                        //$( ".obi" ).remove();
-                        $(".maul").hide(0);
+                
+                        $(".obi").hide(0);
                     }
 
                     console.log(player2 + " is dead. Pick new enemy");
@@ -857,43 +863,44 @@
                     lastEnemy = true;
 
                     if(player2=="Luke Skywalker"){
-                        //$( ".luke" ).remove();
+                    
                         $(".luke").hide(0);
                     }
                     else if(player2=="Darth Sidious"){
-                        //$( ".emperor" ).remove();
+                      
                         $(".emperor").hide(0);
                     }
                     else if(player2=="Darth Maul"){
-                        //$( ".maul" ).remove();
+                    
                         $(".maul").hide(0);
                     }
                     else if(player2=="Obi-Wan Kenobi"){
-                        //$( ".obi" ).remove();
+               
                         $(".obi").hide(0);
                     }
 
                     $("#message1").html("You Won!! GAME OVER!!!");
                     $("#message2").html("");
-                    $(".restart").hide("scale", 500);
+                    
                     console.log("You Won!! GAME OVER!!!");
+
                 }
             }
+
             else if(healthP1<=0){
                 bothAlive = false;
-                console.log("You died. Reset to continue.");
+                console.log("You died. Reset to continue.");    
             }
 
         }
-        
-
-
         
     });
     //onclick - reset button 
     $(".restart").on("click", function(){
             reset();
     });
+    
+    
 
 </script>
 

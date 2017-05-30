@@ -149,6 +149,7 @@ $('.restart').hide();
         //second player2 = ObiWan 
         else if(obi==false && luke==false && emperor==true && maul==true){
             $("#moveObi").attr("id","obiDef");
+            $("#moveLuke3").attr("id","moveLuke");
             
             battleMode = true;
             obi=true;

@@ -1,5 +1,5 @@
 body{
-	font-family: arial;
+	font-family: courier;
 	background-image: url("../images/background.jpg");
 }
 
@@ -306,3 +306,18 @@ body{
     
 }
 
+#obiHealth{
+	font-family:courier;
+}
+
+#lukeHealth{
+	font-family:courier;
+}
+
+#emperorHealth{
+	font-family:courier;
+}
+
+#maulHealth{
+	font-family:courier;
+}

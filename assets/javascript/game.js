@@ -73,10 +73,11 @@ $('.restart').hide();
         emperor = false;
         maul = false; 
     }
+
     // Obi-Wan Click
     $(".obi").on("click", function(){
         //Player 1 = Obi-Wan Kenobi                          
-        if(obi==false && luke==false && emperor==false && maul==false){
+        if(obi==false && luke==false && emperor==false && maul==false && battleMode==false){
             
             $("#luke").attr("id","moveLuke");
             $("#emperor").attr("id","moveEmp");
@@ -147,7 +148,7 @@ $('.restart').hide();
             console.log("you already picked obi");   
         }
         //second player2 = ObiWan 
-        else if(obi==false && luke==false && emperor==true && maul==true){
+        else if(obi==false && luke==false && emperor==true && maul==true && battleMode==false){
             $("#moveObi").attr("id","obiDef");
             $("#moveLuke3").attr("id","moveLuke");
             
@@ -162,7 +163,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //second player2 = ObiWan 
-        else if(obi==false && luke==true && emperor==true && maul==false){
+        else if(obi==false && luke==true && emperor==true && maul==false && battleMode==false){
             $("#moveObi").attr("id","obiDef");
             $("#moveLuke3").attr("id","moveLuke");
             $("#moveMaul3").attr("id","moveMaul4");
@@ -177,7 +178,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //second player2 = ObiWan 
-        else if(obi==false && luke==true && emperor==false && maul==true){
+        else if(obi==false && luke==true && emperor==false && maul==true && battleMode==false){
             $("#moveObi").attr("id","obiDef");
             $("#moveEmp").attr("id","moveEmp4");
             battleMode = true;
@@ -191,7 +192,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //third player 2 = Obi-Wan
-        else if(obi==false && luke==true && emperor==true && maul==true){
+        else if(obi==false && luke==true && emperor==true && maul==true && battleMode==false){
             $("#moveObi").attr("id","obiDef");
             battleMode = true;
             obi=true;
@@ -207,7 +208,7 @@ $('.restart').hide();
     
     $(".luke").on("click", function(){  
         // Player 1 = Luke                       
-        if(obi==false && luke==false && emperor==false && maul==false){
+        if(obi==false && luke==false && emperor==false && maul==false && battleMode==false){
             $("#luke").attr("id","moveLuke2");
             $("#obiWan").attr("id","moveObi");
             $("#emperor").attr("id","moveEmp");
@@ -279,7 +280,7 @@ $('.restart').hide();
             console.log("you already picked luke")
         }
         //Second Player 2 = Luke 
-        else if(obi==false && luke==false && emperor==true && maul==true){
+        else if(obi==false && luke==false && emperor==true && maul==true && battleMode==false){
             $("#moveLuke3").attr("id","lukeDef");
             $("#moveMaul3").attr("id","moveMaul4");
             battleMode = true;
@@ -293,7 +294,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //second player2 = Luke 
-        else if(obi==true && luke==false && emperor==true && maul==false){
+        else if(obi==true && luke==false && emperor==true && maul==false && battleMode==false){
             $("#moveLuke").attr("id","lukeDef");
             $("#moveMaul3").attr("id","moveMaul4");
             battleMode = true;
@@ -307,7 +308,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //second player2 = Luke 
-        else if(obi==true && luke==false && emperor==false && maul==true){
+        else if(obi==true && luke==false && emperor==false && maul==true && battleMode==false){
             $("#moveLuke").attr("id","lukeDef");
             $("#moveMaul3").attr("id","moveMaul4");
             $("#moveEmp").attr("id","moveEmp4");
@@ -322,7 +323,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //third player 2 = Luke
-        else if(obi==true && luke==false && emperor==true && maul==true){
+        else if(obi==true && luke==false && emperor==true && maul==true && battleMode==false){
             $("#moveLuke").attr("id","lukeDef");
             battleMode = true;
             luke=true;
@@ -338,7 +339,7 @@ $('.restart').hide();
     
     $(".emperor").on("click", function(){    
         //Player 1 = Emperor                      
-       if(obi==false && luke==false && emperor==false && maul==false ){
+       if(obi==false && luke==false && emperor==false && maul==false  && battleMode==false){
             
             $("#emperor").attr("id","moveEmp2");
             $("#obiWan").attr("id","moveObi");
@@ -406,7 +407,7 @@ $('.restart').hide();
             
         }
         //second player2 = Emperor
-        else if(obi==false && luke==true && emperor==false && maul==true){
+        else if(obi==false && luke==true && emperor==false && maul==true && battleMode==false){
             $("#moveEmp").attr("id","empDef");
             battleMode = true;
             emperor=true;
@@ -419,7 +420,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //second player2 = Emperor
-        else if(obi==true && luke==false && emperor==false && maul==true){
+        else if(obi==true && luke==false && emperor==false && maul==true && battleMode==false){
             $("#moveEmp").attr("id","empDef");
             battleMode = true;
             emperor=true;
@@ -432,7 +433,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //second player2 = Emperor
-        else if(obi==true && luke==true && emperor==false && maul==false){
+        else if(obi==true && luke==true && emperor==false && maul==false && battleMode==false){
             $("#moveEmp4").attr("id","empDef");
             $("#moveMaul3").attr("id","moveMaul4");
             battleMode = true;
@@ -446,7 +447,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //third player 2 = emperor
-        else if(obi==true && luke==true && emperor==false && maul==true){
+        else if(obi==true && luke==true && emperor==false && maul==true && battleMode==false){
             $("#moveEmp4").attr("id","empDef");
             battleMode = true;
             emperor=true;
@@ -462,7 +463,7 @@ $('.restart').hide();
     });
     $(".maul").on("click", function(){ 
     // Player 1 = Darth Maul                          
-        if(obi==false && luke==false && emperor==false && maul==false){
+        if(obi==false && luke==false && emperor==false && maul==false && battleMode==false){
             $("#maul").attr("id","moveMaul2");
             $("#obiWan").attr("id","moveObi");
             $("#luke").attr("id","moveLuke3");
@@ -527,7 +528,7 @@ $('.restart').hide();
             
         }
         //second player2 = Maul
-        else if(obi==false && luke==true && emperor==true && maul==false){
+        else if(obi==false && luke==true && emperor==true && maul==false && battleMode==false){
             $("#moveMaul3").attr("id","maulDef");
             battleMode = true;
             maul=true;
@@ -540,7 +541,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //second player2 = Maul
-        else if(obi==true && luke==false && emperor==true && maul==false){
+        else if(obi==true && luke==false && emperor==true && maul==false && battleMode==false){
             $("#moveMaul3").attr("id","maulDef");
             battleMode = true;
             maul=true;
@@ -553,7 +554,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //second player2 = Maul
-        else if(obi==true && luke==true && emperor==false && maul==false){
+        else if(obi==true && luke==true && emperor==false && maul==false && battleMode==false){
             $("#moveMaul3").attr("id","maulDef");
             battleMode = true;
             maul=true;
@@ -566,7 +567,7 @@ $('.restart').hide();
             bothAlive = true;
         }
         //third player 2 = maul
-        else if(obi==true && luke==true && emperor==true && maul==false){
+        else if(obi==true && luke==true && emperor==true && maul==false && battleMode==false){
             $("#moveMaul4").attr("id","maulDef");
             battleMode = true;
             maul=true;

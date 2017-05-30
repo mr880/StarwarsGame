@@ -237,7 +237,7 @@ $('.restart').hide();
             luke = true;
             battleMode = true;
             $input = $ (this); 
-          assignP2($input);
+            assignP2($input);
 
             console.log("player2: "+player2);
             
@@ -249,7 +249,7 @@ $('.restart').hide();
             luke = true;
             battleMode = true;
             $input = $ (this); 
-          assignP2($input);
+            assignP2($input);
 
             console.log("player2: "+player2);
         }
@@ -276,7 +276,7 @@ $('.restart').hide();
             battleMode = true;
             luke=true;
             $input = $ (this); 
-           assignP2($input);
+            assignP2($input);
 
             console.log("Second player2: "+player2);
             bothAlive = true;
@@ -288,7 +288,7 @@ $('.restart').hide();
             battleMode = true;
             luke=true;
             $input = $ (this); 
-           assignP2($input);
+            assignP2($input);
 
             console.log("Second player2: "+player2);
             bothAlive = true;
@@ -301,7 +301,7 @@ $('.restart').hide();
             battleMode = true;
             luke=true;
             $input = $ (this); 
-          assignP2($input);
+            assignP2($input);
 
             console.log("Second player2: "+player2);
             bothAlive = true;
@@ -312,7 +312,7 @@ $('.restart').hide();
             battleMode = true;
             luke=true;
             $input = $ (this); 
-           assignP2($input);
+            assignP2($input);
 
             console.log("Third player2: "+player2);
             bothAlive = true;
@@ -428,6 +428,7 @@ $('.restart').hide();
     $(".maul").on("click", function(){ 
     // Player 1 = Darth Maul                          
         if(obi==false && luke==false && emperor==false && maul==false && battleMode==false){
+
             $("#maul").attr("id","moveMaul2");
             $("#obiWan").attr("id","moveObi");
             $("#luke").attr("id","moveLuke3");
@@ -452,7 +453,6 @@ $('.restart').hide();
             battleMode = true;
             $input = $ (this); 
             assignP2($input);
-
             console.log("player2: "+player2);
         }
         //Player1 = Obi-Wan --- Player 2 = Darth Maul 
@@ -462,7 +462,6 @@ $('.restart').hide();
             battleMode = true;
             $input = $ (this); 
             passignP2($input);
-
             console.log("player2: "+player2);
         }
         // Player 1 = Emperor --- Player 2 = Darth Maul
@@ -472,14 +471,11 @@ $('.restart').hide();
             battleMode = true;
             $input = $ (this); 
             assignP2($input);
-
             console.log("player2: "+player2);
         }
         // Player 1 = Darth Maul (re-click)
         else if(obi==false && luke==false && emperor==false && maul==true && battleMode==false){
-        
             console.log("you already picked maul");
-            
         }
         //second player2 = Maul
         else if(obi==false && luke==true && emperor==true && maul==false && battleMode==false){
@@ -488,7 +484,6 @@ $('.restart').hide();
             maul=true;
             $input = $ (this); 
             assignP2($input);
-
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -499,7 +494,6 @@ $('.restart').hide();
             maul=true;
             $input = $ (this); 
             assignP2($input);
-
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -509,9 +503,7 @@ $('.restart').hide();
             battleMode = true;
             maul=true;
             $input = $ (this);
-
             assignP2($input);
-
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -522,7 +514,6 @@ $('.restart').hide();
             maul=true;
             $input = $ (this); 
             assignP2($input);
-
             console.log("Third player2: "+player2);
             bothAlive = true;
         }
@@ -603,7 +594,7 @@ $('.restart').hide();
                 //
                 if(!(obi&&luke&&emperor&&maul)){
                     attackP1 += defaultAttack;
-                    $("#message1").html(player2 + " is dead. Pick new enemy");
+                    $("#message1").html(player2 + " was defeated. Pick new enemy");
                     $("#message2").html("");
                     //hide dead players
                     if(player2=="Luke Skywalker"){
@@ -622,7 +613,7 @@ $('.restart').hide();
                 
                         $(".obi").hide(0);
                     }
-                    console.log(player2 + " is dead. Pick new enemy");
+                    console.log(player2 + " was defeated. Pick new enemy");
                     resetP2();             //reset player 2 
                     bothAlive = false;
                     battleMode = false;
@@ -645,16 +636,16 @@ $('.restart').hide();
                
                         $(".obi").hide(0);
                     }
-                    $("#message1").html("You Won!! GAME OVER!!!");
+                    $("#message1").html("The force is strong with this one... You Win!!");
                     $("#message2").html("");
                     
-                    console.log("You Won!! GAME OVER!!!");
+                    console.log("The force is strong with this one... You Win!!");
                     $('.restart').show();
                 }
             }
             else if(healthP1<=0){
                 bothAlive = false;
-                console.log("You died. Reset to continue.");    
+                console.log("You died. Press Restart to continue.");    
                 $('.restart').show();
             }
         }
@@ -663,4 +654,4 @@ $('.restart').hide();
     //onclick - reset button 
     $(".restart").on("click", function(){
             reset();
-    });
+});

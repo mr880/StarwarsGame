@@ -18,12 +18,14 @@ $('.restart').hide();
     var defaultAttack = 0;
     var bothAlive = true;
     var lastEnemy = false;
+
     function resetP2(){
         player2 = "";
         healthP2 = 0;
         attackP2 = 0;
         counterP2 = 0;
     }
+
     //reset function    
     function reset(){
         battleMode = false;
@@ -74,6 +76,23 @@ $('.restart').hide();
         maul = false; 
     }
 
+    function assignP2(x){
+        player2 += x.attr("char");
+        healthP2 += parseInt(x.attr("health"));
+        attackP2 += parseInt(x.attr("attack"));
+        counterP2 += parseInt(x.attr("counter"));
+        console.log("player2: "+player2);
+    
+    }
+
+    function assignP1(x){
+        player1 += $input.attr("char");
+        healthP1 += parseInt($input.attr("health"));
+        attackP1 += parseInt($input.attr("attack"));
+        counterP1 += parseInt($input.attr("counter"));
+        defaultAttack += attackP1;
+    }
+
     // Obi-Wan Click
     $(".obi").on("click", function(){
         //Player 1 = Obi-Wan Kenobi                          
@@ -91,11 +110,7 @@ $('.restart').hide();
             obi = true;
             battleMode=false;
             $input = $ (this); 
-            player1 += $input.attr("char");
-            healthP1 += parseInt($input.attr("health"));
-            attackP1 += parseInt($input.attr("attack"));
-            counterP1 += parseInt($input.attr("counter"));
-            defaultAttack += attackP1;
+            assignP1($input);
             console.log("player1: "+player1);
         }
         
@@ -108,10 +123,8 @@ $('.restart').hide();
             battleMode = true;
             obi =true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("player2: "+player2);
         }
         // Player 1 = Emperor  --- Player 2 = Obi-Wan
@@ -122,12 +135,9 @@ $('.restart').hide();
             battleMode = true;
             obi =true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
-            console.log("player2: "+player2);
+            assignP2($input);
         }
+
         // Player 1 = Darth Maul  --- Player 2 = Obi-Wan
         else if(obi==false && luke==false && emperor ==false && maul==true && battleMode==false){
             $("#moveObi").attr("id","obiDef");
@@ -136,10 +146,8 @@ $('.restart').hide();
             battleMode = true;
             obi =true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("player2: "+player2);
         }
         //Player1 = Obi-Wan (re-click)
@@ -155,10 +163,8 @@ $('.restart').hide();
             battleMode = true;
             obi=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -170,10 +176,8 @@ $('.restart').hide();
             battleMode = true;
             obi=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -184,10 +188,8 @@ $('.restart').hide();
             battleMode = true;
             obi=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -197,10 +199,8 @@ $('.restart').hide();
             battleMode = true;
             obi=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+           assignP2($input);
+
             console.log("Third player2: "+player2);
             bothAlive = true;
         }
@@ -222,11 +222,7 @@ $('.restart').hide();
             luke = true;
             battleMode=false;
             $input = $ (this); 
-            player1 += $input.attr("char");
-            healthP1 += parseInt($input.attr("health"));
-            attackP1 += parseInt($input.attr("attack"));
-            counterP1 += parseInt($input.attr("counter"));
-            defaultAttack += attackP1;
+            assignP1($input);
             console.log("player1: "+player1);
            
         }
@@ -241,10 +237,8 @@ $('.restart').hide();
             luke = true;
             battleMode = true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+          assignP2($input);
+
             console.log("player2: "+player2);
             
         }
@@ -255,10 +249,8 @@ $('.restart').hide();
             luke = true;
             battleMode = true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+          assignP2($input);
+
             console.log("player2: "+player2);
         }
         // Player 1 = Darth Maul --- Player 2 = Luke
@@ -269,10 +261,8 @@ $('.restart').hide();
             luke = true;
             battleMode = true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("player2: "+player2);
         }
         // Player 1 = Luke (re-click)
@@ -286,10 +276,8 @@ $('.restart').hide();
             battleMode = true;
             luke=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+           assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -300,10 +288,8 @@ $('.restart').hide();
             battleMode = true;
             luke=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+           assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -315,10 +301,8 @@ $('.restart').hide();
             battleMode = true;
             luke=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+          assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -328,10 +312,8 @@ $('.restart').hide();
             battleMode = true;
             luke=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+           assignP2($input);
+
             console.log("Third player2: "+player2);
             bothAlive = true;
         }
@@ -353,11 +335,7 @@ $('.restart').hide();
             emperor = true;
             battleMode=false;
             $input = $ (this); 
-            player1 += $input.attr("char");
-            healthP1 += parseInt($input.attr("health"));
-            attackP1 += parseInt($input.attr("attack"));
-            counterP1 += parseInt($input.attr("counter"));
-            defaultAttack += attackP1;
+            assignP1($input);
             console.log("player1: "+player1);
         }
         //Player 1 = Luke --- Player 2 = Emperor
@@ -368,10 +346,8 @@ $('.restart').hide();
             emperor = true;
             battleMode = true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("player2: "+player2);
         }
         //Player1 = Obi-Wan --- Player 2 = Emperor 
@@ -381,10 +357,8 @@ $('.restart').hide();
             emperor = true;
             battleMode = true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("player2: "+player2);
         }
         // Player 1 = Darth Maul --- Player 2 = Emperor
@@ -394,10 +368,8 @@ $('.restart').hide();
             emperor = true;
             battleMode = true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("player2: "+player2);
         }
         // Player 1 = Emperor (re-click)
@@ -412,10 +384,8 @@ $('.restart').hide();
             battleMode = true;
             emperor=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -425,10 +395,8 @@ $('.restart').hide();
             battleMode = true;
             emperor=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -439,10 +407,8 @@ $('.restart').hide();
             battleMode = true;
             emperor=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -452,10 +418,8 @@ $('.restart').hide();
             battleMode = true;
             emperor=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("Third player2: "+player2);
             bothAlive = true;
         }
@@ -477,11 +441,7 @@ $('.restart').hide();
             maul = true;
             battleMode=false;
             $input = $ (this); 
-            player1 += $input.attr("char");
-            healthP1 += parseInt($input.attr("health"));
-            attackP1 += parseInt($input.attr("attack"));
-            counterP1 += parseInt($input.attr("counter"));
-            defaultAttack += attackP1;
+            assignP1($input);
             console.log("player1: "+player1);
        
         }
@@ -491,10 +451,8 @@ $('.restart').hide();
             maul = true;
             battleMode = true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("player2: "+player2);
         }
         //Player1 = Obi-Wan --- Player 2 = Darth Maul 
@@ -503,10 +461,8 @@ $('.restart').hide();
             maul = true;
             battleMode = true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            passignP2($input);
+
             console.log("player2: "+player2);
         }
         // Player 1 = Emperor --- Player 2 = Darth Maul
@@ -515,10 +471,8 @@ $('.restart').hide();
             maul = true;
             battleMode = true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("player2: "+player2);
         }
         // Player 1 = Darth Maul (re-click)
@@ -533,10 +487,8 @@ $('.restart').hide();
             battleMode = true;
             maul=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -546,10 +498,8 @@ $('.restart').hide();
             battleMode = true;
             maul=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -558,11 +508,10 @@ $('.restart').hide();
             $("#moveMaul3").attr("id","maulDef");
             battleMode = true;
             maul=true;
-            $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            $input = $ (this);
+
+            assignP2($input);
+
             console.log("Second player2: "+player2);
             bothAlive = true;
         }
@@ -572,15 +521,14 @@ $('.restart').hide();
             battleMode = true;
             maul=true;
             $input = $ (this); 
-            player2 += $input.attr("char");
-            healthP2 += parseInt($input.attr("health"));
-            attackP2 += parseInt($input.attr("attack"));
-            counterP2 += parseInt($input.attr("counter"));
+            assignP2($input);
+
             console.log("Third player2: "+player2);
             bothAlive = true;
         }
         
     });
+
     //When the attack button is pressed
     $(".attack").on("click", function(){
         if(player1 && player2 && bothAlive&&lastEnemy==false){

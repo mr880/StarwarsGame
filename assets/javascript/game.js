@@ -5,6 +5,7 @@ var luke = false;
 var emperor = false;
 var maul = false; 
 var battleMode = false;
+
 var player1 = "";
 var healthP1 = 0;
 var attackP1 = 0;
@@ -86,10 +87,10 @@ function assignP2(x){
 }
 
 function assignP1(x){
-    player1 += $input.attr("char");
-    healthP1 += parseInt($input.attr("health"));
-    attackP1 += parseInt($input.attr("attack"));
-    counterP1 += parseInt($input.attr("counter"));
+    player1 += x.attr("char");
+    healthP1 += parseInt(x.attr("health"));
+    attackP1 += parseInt(x.attr("attack"));
+    counterP1 += parseInt(x.attr("counter"));
     defaultAttack += attackP1;
 }
 
@@ -565,7 +566,7 @@ $(".attack").on("click", function(){
             if(healthP1<=0){
                 bothAlive = false;      //set the trigger that both players are not alive
                 
-                $("#message1").html("You died. Reset to continue!");
+                $("#message1").html("You died. Press Restart button to continue!");
                 $("#message2").html("");
                 if(player1=="Luke Skywalker"){
                
@@ -583,7 +584,7 @@ $(".attack").on("click", function(){
               
                     $(".obi").hide(0);
                 }
-                console.log("You died. Reset to continue!");
+                console.log("You died. Press Restart to continue!");
                 $('.restart').show();
                 
             }
